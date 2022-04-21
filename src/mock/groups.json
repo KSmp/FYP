@@ -1,0 +1,10 @@
+{
+  "id": "dupa",
+  "name": "D00psko",
+  "usersCount": 420,
+  "access": "1",
+  "games": ["Valorant", "Minecraft"],
+  "isInvited": false,
+  "isOfficial": true,
+  "isGame": false
+}
