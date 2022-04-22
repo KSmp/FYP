@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  title: 'FYP'
+  title: 'FYP',
+  apiURL: 'api.url',
 };
 
 /*

@@ -1,3 +1,9 @@
+@use '../../variables' as v;
+
+.mat-toolbar {
+  height: v.$toolbarHeight;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
