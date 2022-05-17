@@ -1,0 +1,24 @@
+[
+  {
+    "id": "dupa",
+    "name": "D00psko",
+    "img": "dupa.jpg",
+    "usersCount": 420,
+    "access": "1",
+    "games": ["Valorant", "Minecraft"],
+    "isInvited": false,
+    "isOfficial": true,
+    "isGame": false
+  },
+  {
+    "id": "minecraft",
+    "name": "Minecraft",
+    "img": "minecraft.jpg",
+    "usersCount": 69,
+    "access": "2",
+    "games": ["Minecraft"],
+    "isInvited": true,
+    "isOfficial": false,
+    "isGame": true
+  }
+]

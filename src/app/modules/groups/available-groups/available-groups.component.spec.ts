@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GroupSideListComponent } from './group-side-list.component';
+import { AvailableGroupsComponent } from './available-groups.component';
 
-describe('GroupSideListComponent', () => {
-  let component: GroupSideListComponent;
-  let fixture: ComponentFixture<GroupSideListComponent>;
+describe('AvailableGroupsComponent', () => {
+  let component: AvailableGroupsComponent;
+  let fixture: ComponentFixture<AvailableGroupsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupSideListComponent ]
+      declarations: [ AvailableGroupsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupSideListComponent);
+    fixture = TestBed.createComponent(AvailableGroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

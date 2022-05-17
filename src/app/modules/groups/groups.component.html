@@ -1,0 +1,13 @@
+<mat-drawer-container class="main-view-container">
+  <mat-drawer mode="side" position="start" opened>
+    <app-groups-side
+      [groups]="userGroups$ | async"
+    ></app-groups-side>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-groups-content
+      [availableGroups]="availableGroups$ | async"
+      [group]="group$ | async"
+    ></app-groups-content>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Group } from './interfaces/group.interface';
+import { Group } from '../../interfaces/group.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,16 @@ export class GroupsService {
 
   constructor(private http: HttpClient) { }
 
-  getMany(url: string = ''): Observable<Group[]> {
+  getAvailableGroups(url: string = ''): Observable<Group[]> {
     // return this.http.get<Group[]>(this.apiUrl + url);
-    return this.http.get<Group[]>("../../mock/games.json");
+    return this.http.get<Group[]>("http://localhost:4200/assets/mock/groups.json");
   }
 
-  get(url: string): Observable<Group> {
+  getUserGroups() {
+    return this.http.get<Group[]>("http://localhost:4200/assets/mock/groups.json");
+  }
+
+  getGroup(url: string): Observable<Group> {
     return this.http.get<Group>(this.apiUrl + url);
   }
 }
