@@ -1,0 +1,15 @@
+<div class="header">
+  <div
+    class="top"
+    [style.background-image]="'url(' + (element?.background || environment.appURL + 'assets/generic.jpg') + ')'"
+  >
+    <div
+      class="avatar-image"
+      [style.background-image]="'url(' + (element?.img || environment.appURL + 'assets/group.jpg') + ')'"
+    ></div>
+  </div>
+  <div class="bottom">
+    <h2>{{ element.name }}</h2>
+    <p>{{ element?.description }}</p>
+  </div>
+</div>

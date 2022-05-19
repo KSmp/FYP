@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   title: 'FYP',
+  appURL: 'http://localhost:4200/',
   apiURL: 'api.url',
   imagesURL: 'http://localhost:4200/assets/mock/',
 };

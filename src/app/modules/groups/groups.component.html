@@ -1,13 +1,10 @@
-<mat-drawer-container class="main-view-container">
-  <mat-drawer mode="side" position="start" opened>
-    <app-groups-side
-      [groups]="userGroups$ | async"
-    ></app-groups-side>
-  </mat-drawer>
-  <mat-drawer-content>
-    <app-groups-content
-      [availableGroups]="availableGroups$ | async"
-      [group]="group$ | async"
-    ></app-groups-content>
-  </mat-drawer-content>
-</mat-drawer-container>
+<mat-sidenav-container class="main-view-container" autosize>
+  <mat-sidenav mode="side" opened>
+    <app-side-list
+      [items]="userGroups$ | async"
+    ></app-side-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

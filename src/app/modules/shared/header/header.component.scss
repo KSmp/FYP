@@ -1,0 +1,30 @@
+.header {
+  .top {
+    height: 256px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .avatar-image {
+      margin-left: 50px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid white;
+      background-color: black;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      bottom: calc(0px - 50px);
+    }
+  }
+
+  .bottom {
+    margin-left: 50px;
+    margin-top: 70px;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { AvailableGroupsComponent } from './available-groups/available-groups.component';
 import { GroupComponent } from './group/group.component';
-import { GroupsContentComponent } from './groups-content/groups-content.component';
-import { GroupsSideComponent } from './groups-side/groups-side.component';
 import { GroupsComponent } from './groups.component';
+import { GroupCardComponent } from './group-card/group-card.component';
+import { GroupNewComponent } from './group-new/group-new.component';
+import { AvailableGroupsContainer } from './available-groups/available-groups.container';
+import { ServerModule } from '../server/server.module';
 
 
 
 @NgModule({
   imports: [
     SharedModule,
-    RouterModule,
+    ServerModule,
   ],
   declarations: [
     GroupsComponent,
-    GroupsSideComponent,
-    GroupsContentComponent,
     GroupComponent,
+    AvailableGroupsContainer,
     AvailableGroupsComponent,
+    GroupCardComponent,
+    GroupNewComponent,
   ],
 })
 export class GroupsModule { }

@@ -1,0 +1,20 @@
+<div [classList]="isSmall ? 'voting small' : 'voting'">
+  <button
+    mat-icon-button
+    (click)="$event.stopPropagation();vote(Voting.plus)"
+  >
+    <mat-icon [ngClass]="{'plus': hasVoted === Voting.plus}">keyboard_arrow_up</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    (click)="$event.stopPropagation();vote(Voting.minus)"
+  >
+    <mat-icon [ngClass]="{'minus': hasVoted === Voting.minus}">keyboard_arrow_down</mat-icon>
+  </button>
+  <span
+    [ngClass]="{
+      'plus': hasVoted === Voting.plus,
+      'minus': hasVoted === Voting.minus
+    }"
+  >{{ votingCount }}</span>
+</div>

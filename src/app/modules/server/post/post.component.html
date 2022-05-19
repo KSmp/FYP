@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-card [ngClass]="{'full-width': fullWidth }">
+    <mat-card-header>
+      <div
+        mat-card-avatar
+        class="avatar-image"
+        [style.background-image]="'url(' + (post.author?.avatar || environment.appURL + 'assets/user-avatar.webp') + ')'"
+      ></div>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+      <mat-card-subtitle>Posted by {{ post.author.name }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div [innerHTML]="post.content"></div>
+      <div
+        *ngIf="post.img"
+        class="image-container"
+      >
+        <img
+          [src]="post.img"
+          [alt]="post.title"
+        >
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-voting
+        [hasVoted]="post.hasVoted"
+        [votingCount]="post.votingCount"
+      ></app-voting>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,35 @@
+@use '../../../../variables' as v;
+
+.mat-tab-group {
+  margin: 25px 50px;
+}
+
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .create-post {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    width: v.$postWidth;
+
+    .my-avatar {
+      background-position: center;
+      background-size: cover;
+    }
+
+    input {
+      margin-left: 16px;
+      background-color: #272729;
+      border-radius: 4px;
+      border: 1px solid #272729;
+      flex-grow: 1;
+      height: 38px;
+      margin-right: 8px;
+      outline: none;
+      padding: 0 16px;
+    }
+  }
+}

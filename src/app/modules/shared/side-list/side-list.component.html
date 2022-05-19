@@ -1,12 +1,11 @@
-<div>
+<div class="list">
   <div
     *ngFor="let item of items"
-    class = "group"
-  >
-    <img
-      src = "{{ environment.imagesURL }}{{ item.img }}"
-      matTooltipPosition = "right"
-      [matTooltip] = "item.name"
-    >
-  </div>
+    class="group"
+    matTooltipPosition="right"
+    routerLinkActive="is-active"
+    [routerLink]="[item.id]"
+    [matTooltip]="item.name"
+    [style.background-image]="'url(' + (item?.img || environment.appURL + 'assets/group.jpg') + ')'"
+  ></div>
 </div>

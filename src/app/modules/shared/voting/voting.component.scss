@@ -1,0 +1,46 @@
+.voting {
+  display: flex;
+  align-items: center;
+  color: white;
+
+  span {
+    margin-left: 16px;
+    font-size: 1.2rem;
+  }
+
+  .mat-icon {
+    transform: scale(1.2);
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 0.5rem;
+
+    &:hover {
+      background-color: rgba(110, 107, 107, 0.342);
+    }
+  }
+
+  .plus {
+    color: rgb(255, 69, 0);
+    font-weight: 500;
+  }
+
+  .minus {
+    color: rgb(113, 147, 255);
+    font-weight: 500;
+  }
+
+  &.small {
+    // transform: scale(0.75);
+
+    button {
+      transform: scale(0.75);
+    }
+
+    span {
+      margin-left: 5px;
+      font-size: 1rem;
+    }
+  }
+}

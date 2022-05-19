@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MainModule } from './modules/main/main.module';
 import { GroupsModule } from './modules/groups/groups.module';
+import { ServerModule } from './modules/server/server.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +18,8 @@ import { GroupsModule } from './modules/groups/groups.module';
     HttpClientModule,
     MainModule,
     GroupsModule,
+    ServerModule,
+    ProfileModule,
   ],
   bootstrap: [AppComponent]
 })

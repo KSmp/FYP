@@ -8,12 +8,15 @@ export enum AccessLevel {
 export interface Group {
   id: string,
   name: string,
-  img: string,
+  img?: string,
   usersCount: number,
   access: AccessLevel,
   games: string[],
   isInvited: boolean,
   isOfficial: boolean,
   isGame: boolean,
+  description: string,
+  background?: string,
+  tabs?: string[]
 }
 

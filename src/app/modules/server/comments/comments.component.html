@@ -1,0 +1,50 @@
+<div
+  *ngFor="let comment of comments"
+  class="container"
+>
+  <div class="comment">
+    <div class="left">
+      <div
+        class="avatar-image"
+        [style.background-image]="'url(' + (comment.author?.avatar || environment.appURL + 'assets/user-avatar.webp') + ')'"
+      ></div>
+      <div></div>
+    </div>
+    <div class="right">
+      <div>
+        <span class="name">{{ comment.author.name }}</span>
+        <span class="date">{{ comment.date | date }}</span>
+      </div>
+      <p>{{ comment.content }}</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="buttons">
+      <app-voting
+        [isSmall]="true"
+        [hasVoted]="comment.hasVoted"
+        [votingCount]="comment.votingCount"
+      ></app-voting>
+      <button
+        mat-icon-button
+        (click)="comment.showForm = !comment?.showForm"
+      >
+        <mat-icon>comment</mat-icon>
+      </button>
+    </div>
+    <div
+      *ngIf="comment?.showForm"
+      class="form"
+    >
+      <app-tweet></app-tweet>
+    </div>
+  </div>
+  <div
+    class="next-comments"
+  >
+    <app-comments
+      *ngIf="comment.replies?.length" 
+      [comments]="comment.replies"
+    ></app-comments>
+  </div>
+</div>

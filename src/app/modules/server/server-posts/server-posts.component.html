@@ -1,0 +1,33 @@
+<mat-tab-group 
+  animationDuration="1000ms"
+  (selectedTabChange)="tabChange()"
+>
+  <mat-tab label="Posts">
+    <div class="create-post-container">
+      <mat-card class="create-post">
+        <div
+          mat-card-avatar
+          class="my-avatar"
+          [style.background-image]="'url(' + (avatar || environment.appURL + 'assets/user-avatar.webp') + ')'"
+        ></div>
+        <input placeholder="Create post" [routerLink]="['new-post']">
+      </mat-card>
+    </div>
+    <div
+      *ngIf="isLoadingPosts"
+      class="loading-container"
+    >
+      <mat-spinner
+        [diameter]="160"
+      ></mat-spinner>
+    </div>
+    <div *ngIf="!isLoadingPosts">
+      <app-post
+        *ngFor="let post of serverPosts"
+        [post]="post"
+        [routerLink]="[post.id]"
+      ></app-post>
+    </div>
+  </mat-tab>
+  <mat-tab label="Chat">Content 3</mat-tab>
+</mat-tab-group>

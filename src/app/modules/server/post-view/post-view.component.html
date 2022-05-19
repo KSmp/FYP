@@ -1,0 +1,24 @@
+<div
+  *ngIf="!isLoading"
+  class="container"
+>
+  <app-post
+    [post]="_post"
+    [fullWidth]="true"
+  ></app-post>
+  <div>
+    <app-tweet></app-tweet>
+    <app-comments
+      [comments]="_post.comments"
+    ></app-comments>
+  </div>
+</div>
+
+<div
+  *ngIf="isLoading"
+  class="loading-container"
+>
+  <mat-spinner
+    [diameter]="160"
+  ></mat-spinner>
+</div>

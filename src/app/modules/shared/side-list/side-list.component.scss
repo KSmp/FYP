@@ -1,10 +1,40 @@
-.group {
-  padding: 5px;
+.list {
+  padding: 0 10px;
 
-  img {
-    width: 75px;
-    border: 1px solid white;
-    border-radius: 20%;
+  .group {
+    padding: 5px;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(110, 107, 107, 0.342);
+    background-color: black;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 105%;
+    background-repeat: no-repeat;
+    margin-top: 16px;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      border-left: 3px solid white;
+      border-radius: 20%;
+      height: 100%;
+      top: 0;
+      left: -20px;
+      transition: left 0.2s linear;
+    }
+
+    &.is-active {
+      border-radius: 33%;
+      background-size: 125%;
+      position: relative;
+
+      &::before {
+        left: -10px;
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Post } from 'src/app/interfaces/post.interface';
 import { environment } from 'src/environments/environment';
 import { Group } from '../../interfaces/group.interface';
 
@@ -23,6 +24,15 @@ export class GroupsService {
   }
 
   getGroup(url: string): Observable<Group> {
-    return this.http.get<Group>(this.apiUrl + url);
+    // return this.http.get<Group>(this.apiUrl + url);
+    return this.http.get<Group>("http://localhost:4200/assets/mock/group.json");
+  }
+
+  getPosts(id: string): Observable<Post[]> {
+    return this.http.get<Post[]>("http://localhost:4200/assets/mock/posts.json");
+  }
+
+  getPostById(id: string): Observable<Post> {
+    return this.http.get<Post>("http://localhost:4200/assets/mock/post.json");
   }
 }

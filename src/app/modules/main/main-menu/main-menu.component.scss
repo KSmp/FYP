@@ -11,5 +11,10 @@
     &:hover, &:active {
       border-bottom: 4px solid white;
     }
+
+    &.is-active {
+      color: rgb(88, 101, 242);
+      border-bottom: 4px solid rgb(88, 101, 242);
+    }
   }
 }

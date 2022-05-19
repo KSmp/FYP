@@ -6,3 +6,58 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .main-view-container {
   height: calc(100% - v.$toolbarHeight);
 }
+
+.ck {
+  background-color: #363636 !important;
+  color: white !important;
+  border: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: loadingShadeTimeout .4s linear .75s 1 forwards;
+
+  .mat-spinner {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 80px);
+  }
+}
+
+@keyframes loadingShadeTimeout {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ededed #363636;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #363636;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ededed;
+  border-radius: 10px;
+  border: 3px solid #e3e3e3;
+}

@@ -1,0 +1,39 @@
+@use '../../../../variables' as v;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mat-card {
+    margin-top: 32px;
+    max-width: v.$postWidth;
+    cursor: pointer;
+
+    &.full-width {
+      margin-right: 25%;
+      max-width: 100%;
+    }
+
+    .avatar-image {
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(110, 107, 107, 0.342);
+      position: relative;
+    }
+
+    .mat-card-actions {
+      border-top: 1px solid rgba(lightgrey, 0.2);
+    }
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+
+    img {
+      max-height: 512px;
+    }
+  }
+}

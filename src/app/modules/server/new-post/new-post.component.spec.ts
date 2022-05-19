@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GroupsContentComponent } from './groups-content.component';
+import { NewPostComponent } from './new-post.component';
 
-describe('GroupsContentComponent', () => {
-  let component: GroupsContentComponent;
-  let fixture: ComponentFixture<GroupsContentComponent>;
+describe('NewPostComponent', () => {
+  let component: NewPostComponent;
+  let fixture: ComponentFixture<NewPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupsContentComponent ]
+      declarations: [ NewPostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupsContentComponent);
+    fixture = TestBed.createComponent(NewPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

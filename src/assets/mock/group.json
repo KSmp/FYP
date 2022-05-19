@@ -1,0 +1,13 @@
+{
+  "id": "minecraft",
+  "name": "Minecraft",
+  "img": "http://localhost:4200/assets/mock/minecraft.jpg",
+  "usersCount": 69,
+  "access": "2",
+  "games": ["Minecraft"],
+  "isInvited": true,
+  "isOfficial": false,
+  "isGame": true,
+  "description": "Grupa fanów Minecrafta",
+  "background": "http://localhost:4200/assets/mock/minecraft-bck.jpg"
+}
