@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
   editorConfig = {
     placeholder: 'Treść',
     simpleUpload: {
-      uploadUrl: environment.apiURL // apiImages
+      uploadUrl: environment.imagesURL// apiImages
     },
     title: {
       placeholder: "adsasd"

@@ -11,56 +11,63 @@ import { Group } from '../../interfaces/group.interface';
   providedIn: 'root'
 })
 export class ApiService {
-  endpoint = '/groups/'
-  apiUrl = environment.apiURL + this.endpoint
-  
-  private profileId: string
+  readonly apiUrl = environment.apiURL
 
-  constructor(private http: HttpClient) {
-    console.warn('CREATED')
-    this.setProfile("Cabby")
+  constructor(private http: HttpClient) { }
+
+  login(formValue: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/login', formValue)
   }
 
-  getFriends(url: string = ''): Observable<User[]> {
-    // return this.http.get<Group[]>(this.apiUrl + url);
-    return this.http.get<User[]>("http://localhost:4200/assets/mock/groups.json");
+  register(formValue: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/register', formValue)
   }
 
-  getAvailableGroups(url: string = ''): Observable<Group[]> {
-    // return this.http.get<Group[]>(this.apiUrl + url);
-    return this.http.get<Group[]>("http://localhost:4200/assets/mock/groups.json");
+  getFriends(name: string): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl + '/friends/' + name);
   }
 
-  getUserGroups() {
-    return this.http.get<Group[]>("http://localhost:4200/assets/mock/groups.json");
+  getAvailableGroups(name: string): Observable<Group[]> {
+    return this.http.get<Group[]>(this.apiUrl + '/available-groups/' + name);
   }
 
-  getGroup(url: string): Observable<Group> {
-    // return this.http.get<Group>(this.apiUrl + url);
-    return this.http.get<Group>("http://localhost:4200/assets/mock/group.json");
+  getUserGroups(name: string): Observable<Group[]> {
+    return this.http.get<Group[]>(this.apiUrl + '/user-groups/' + name);
   }
 
-  getPosts(id: string, type: string): Observable<Post[]> {
-    return this.http.get<Post[]>("http://localhost:4200/assets/mock/posts.json");
+  getGroup(name: string): Observable<Group> {
+    return this.http.get<Group>(this.apiUrl + '/groups/' + name);
   }
 
-  getPostById(id: string): Observable<Post> {
-    return this.http.get<Post>("http://localhost:4200/assets/mock/post.json");
+  getPost(parentType: string, parent: string, title: string): Observable<Post> {
+    return this.http.get<Post>(this.apiUrl + '/post/' + parentType + '/' + parent + '/' + title);
   }
 
-  setProfile(id: string) {
-    this.profileId = id
+  getUser(name: string): Observable<User> {
+    return this.http.get<User>(this.apiUrl + '/user/' + name);
   }
 
-  getProfileId() {
-    return this.profileId
+  postPost(parentType: string, parent: string, body: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/create-post/' + parentType + '/' + parent, body)
   }
 
-  getUser(id: string): Observable<User> {
-    return this.http.get<User>("http://localhost:4200/assets/mock/user.json");
+  createGroup(groupProps: any) {
+    return this.http.post<User>(this.apiUrl + '/create-group', groupProps);
   }
 
-  getSimpleProfile(): Observable<SimpleUser> {
-    return this.http.get<SimpleUser>("http://localhost:4200/assets/mock/simple-user.json");
+  editGroup(group: string, groupParams: any) {
+    return this.http.post<any>(this.apiUrl + '/edit-group/' + group, groupParams);
+  }
+
+  editUser(user: string, userParams: any) {
+    return this.http.post<any>(this.apiUrl + '/edit-user/' + user, userParams);
+  }
+
+  joinGroup(params: any) {
+    return this.http.post<any>(this.apiUrl + '/join-group', params);
+  }
+
+  addFriend(params: any) {
+    return this.http.post<any>(this.apiUrl + '/add-friend', params);
   }
 }

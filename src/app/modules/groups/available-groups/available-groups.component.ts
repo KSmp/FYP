@@ -11,17 +11,17 @@ export class AvailableGroupsComponent implements OnInit {
   @Input() groups: Group[]
 
   newGroup: Group = {
-    id: "new",
+    slug: "new",
     name: "Create new group",
     img: environment.appURL + "assets/plus.jpg",
     usersCount: null,
     access: null,
     games: null,
-    isInvited: false,
-    isOfficial: false,
-    isGame: false,
+    posts: [],
     description: "",
-    background: environment.appURL + "assets/generic.jpg"
+    owner: "",
+    background: environment.appURL + "assets/generic.jpg",
+    users: [],
   }
 
   constructor() { }

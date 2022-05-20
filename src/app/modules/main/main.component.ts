@@ -13,8 +13,10 @@ export class MainComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  ngOnInit(): void { 
-    this.authService.isLoggedIn().subscribe(res => {
+  ngOnInit(): void {
+    this.authService.checkIfIsAlreadyLoggedIn()
+
+    this.authService.loggedIn.subscribe( res => {
       this.showToolbar = res
     })
   }

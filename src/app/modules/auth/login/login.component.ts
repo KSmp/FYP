@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { environment } from 'src/environments/environment';
@@ -8,22 +8,26 @@ import { environment } from 'src/environments/environment';
   templateUrl: './login.component.html',
   styleUrls: ['../auth.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   readonly environment = environment
-  form: FormGroup;
+  form: FormGroup
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-  ) { 
+  ) {
     this.authService.redirectIfLoggedIn()
   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      login: ['', Validators.required],
+      name: ['', Validators.required],
       password: ['', Validators.required],
     });
+  }
+
+  ngOnDestroy(): void {
+    this.authService.usubscribeFromRedirection()
   }
 
   onSubmit(): void {

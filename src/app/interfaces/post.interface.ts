@@ -8,7 +8,7 @@ export enum Voting {
 }
 
 export interface Post {
-  id: string,
+  slug: string,
   title: string,
   content: string,
   votingCount: number,

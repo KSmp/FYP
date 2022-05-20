@@ -11,7 +11,6 @@ export enum Online {
 }
 
 export interface User {
-  id: string,
   name: string,
   img?: string,
   background?: string,
@@ -20,7 +19,7 @@ export interface User {
   friends: string[],
   games: string[],
   description: string,
-  friendship: Friendship,
+  friendship?: Friendship,
   online?: Online
   links?: {
     steam?: string,

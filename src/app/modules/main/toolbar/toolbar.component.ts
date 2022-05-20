@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,9 +11,14 @@ export class ToolbarComponent implements OnInit {
 
   environment = environment
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  logout() {
+    this.authService.logout()
   }
 
 }

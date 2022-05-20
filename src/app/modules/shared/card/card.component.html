@@ -1,4 +1,4 @@
-<a [routerLink]="element.id">
+<a [routerLink]="asGroup(element).slug || asUser(element).name">
   <mat-card class="group">
     <mat-card-header 
       class="group-header"

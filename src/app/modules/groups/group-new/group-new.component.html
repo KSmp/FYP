@@ -4,15 +4,21 @@
       [formGroup]="form"
       (ngSubmit)="onSubmit()"
     >
-      <h2>Create new group</h2>
+      <h2 *ngIf="type == 'new-group'">Create new group</h2>
+      <h2 *ngIf="type == 'group'">Edit group</h2>
+      <h2 *ngIf="type == 'user'">Edit profile</h2>
       <div class="fields">
-        <mat-form-field color="accent">
+        <mat-form-field *ngIf="type == 'new-group'"color="accent">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" required>
         </mat-form-field>
         <mat-form-field color="accent">
           <mat-label>Description</mat-label>
           <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field color="accent">
+          <mat-label>Games</mat-label>
+          <textarea matInput formControlName="games"></textarea>
         </mat-form-field>
         <div class="uploads">
           <div class="image-upload">
@@ -21,6 +27,7 @@
               class="upload-only"
               [config]="editorConfig"
               [editor]="img"
+              formControlName="img"
             ></ckeditor>
           </div>
           <div class="image-upload">
@@ -29,6 +36,7 @@
               class="upload-only"
               [config]="editorConfig"
               [editor]="background"
+              formControlName="background"
             ></ckeditor>
           </div>
         </div>

@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   title: 'FYP',
   appURL: 'http://localhost:4200/',
-  apiURL: 'http://localhost:4200/assets/mock/',
-  imagesURL: 'http://localhost:4200/assets/mock/',
+  apiURL: 'http://localhost:3000',
+  imagesURL: 'http://localhost:3000/images',
 };
 
 /*

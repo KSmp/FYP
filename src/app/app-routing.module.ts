@@ -38,6 +38,9 @@ const routes: Routes = [
           {
             path: 'new',
             component: GroupNewComponent,
+            data: {
+              type: 'new-group'
+            },
           },
           {
             path: ':id',
@@ -46,6 +49,13 @@ const routes: Routes = [
               {
                 path: '',
                 component: ServerPostsContainer,
+              },
+              {
+                path: 'edit',
+                component: GroupNewComponent,
+                data: {
+                  type: 'group'
+                },
               },
               {
                 path: 'new-post',
@@ -72,6 +82,13 @@ const routes: Routes = [
             component: NewPostComponent,
           },
           {
+            path: 'edit',
+            component: GroupNewComponent,
+            data: {
+              type: 'user'
+            },
+          },
+          {
             path: ':postid',
             component: PostViewContainer,
           }
@@ -88,6 +105,9 @@ const routes: Routes = [
           {
             path: ':id',
             component: ProfileContainer,
+            data: {
+              type: 'friend'
+            },
             children: [
               {
                 path: '',
@@ -120,7 +140,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: '**', redirectTo: '/login', pathMatch: 'full'
+    path: '**', redirectTo: '', pathMatch: 'full'
   }
 ];
 

@@ -7,7 +7,7 @@
     class="group"
     matTooltipPosition="right"
     routerLinkActive="is-active"
-    [routerLink]="[item.id]"
+    [routerLink]="[item.slug]"
     [matTooltip]="item.name"
     [style.background-image]="'url(' + (item?.img || environment.appURL + 'assets/user-avatar.webp') + ')'"
   ></div>

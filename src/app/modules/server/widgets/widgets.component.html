@@ -1,15 +1,75 @@
 <div class="container">
   <mat-card *ngFor="let widget of widgets">
-    <section
-      *ngIf="widget === 'edit'"
-      [class]="widget"
-      (click)="1"
-    >
-      <span>Edit</span>
-      <button mat-icon-button>
-        <mat-icon>edit</mat-icon>
-      </button>
-    </section>
+    <ng-container *ngIf="type == 'p'">
+      <section
+        *ngIf="widget === 'edit'"
+        [class]="widget"
+        [routerLink]="'edit'"
+      >
+        <span>Edit</span>
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="type == 'f' && tmpStatus == true">
+      <section
+        *ngIf="widget === 'edit'"
+        [class]="widget"
+        (click)="changeFriendship(element.name, false)"
+      >
+        <span>Remove from friends</span>
+        <button mat-icon-button>
+          <mat-icon>do_not_disturb_on</mat-icon>
+        </button>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="type == 'f' && tmpStatus == false">
+      <section
+        *ngIf="widget === 'edit'"
+        [class]="widget"
+        (click)="changeFriendship(element.name, true)"
+      >
+        <span>Add to friends</span>
+        <button mat-icon-button>
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="type == 'g' && asGroup(element).owner == user.name">
+      <section
+        *ngIf="widget === 'edit'"
+        [class]="widget"
+        [routerLink]="'edit'"
+      >
+        <span>Edit</span>
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="type == 'g'">
+      <section
+        *ngIf="widget === 'edit' && tmpStatus == true && asGroup(element).owner != user.name"
+        [class]="widget"
+        (click)="changeMembership(element.name, false)"
+      >
+        <span>Leave group</span>
+        <button mat-icon-button>
+          <mat-icon>do_not_disturb_on</mat-icon>
+        </button>
+      </section>
+      <section
+        *ngIf="widget === 'edit' && tmpStatus == false && asGroup(element).owner != user.name"
+        [class]="widget"
+        (click)="changeMembership(element.name, true)"
+      >
+        <span>Join group</span>
+        <button mat-icon-button>
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </section>
+    </ng-container>
     <section
       *ngIf="widget === 'groups'"
       [class]="widget"
@@ -17,7 +77,7 @@
       <span>Groups</span>
       <span>{{ asUser(element).groups?.length || 0 }}</span>
     </section>
-    <section
+    <!-- <section
       *ngIf="widget === 'online'"
       [class]="widget"
     >
@@ -35,7 +95,7 @@
         <span>Online</span>
         <span class="dot"></span>
       </div>
-    </section>
+    </section> -->
     <section
       *ngIf="widget === 'userCount'"
       [class]="widget"

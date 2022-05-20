@@ -1,4 +1,4 @@
 export interface SimpleUser {
   name: string,
-  avatar?: string,
+  img?: string,
 }

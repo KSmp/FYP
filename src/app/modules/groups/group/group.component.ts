@@ -22,6 +22,6 @@ export class GroupComponent implements OnInit {
   ngOnInit(): void {
     const id = this.router.url.split('/')[2]
     this.group$ = this.api.getGroup(id)
-    this.mainService.saveElement('widgets', ["edit", "visibility", "userCount", "games"])
+    this.mainService.widgets$.next(["edit", "visibility", "userCount", "games"])
   }
 }

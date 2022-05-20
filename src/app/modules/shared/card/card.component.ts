@@ -17,4 +17,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  asUser(val: any): User { return val }
+  asGroup(val: any): Group { return val }
 }

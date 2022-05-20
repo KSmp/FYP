@@ -15,7 +15,7 @@
       <div
         mat-card-avatar
         class="my-avatar"
-        [style.background-image]="'url(' + (profile?.avatar || environment.appURL + 'assets/user-avatar.webp') + ')'"
+        [style.background-image]="'url(' + (profile?.img || environment.appURL + 'assets/user-avatar.webp') + ')'"
       ></div>
       <input placeholder="Create post" [routerLink]="['new-post']">
     </mat-card>
@@ -23,7 +23,7 @@
     <app-post
       *ngFor="let post of serverPosts"
       [post]="post"
-      [routerLink]="[post.id]"
+      [routerLink]="[post.slug]"
     ></app-post>
   </div>
 

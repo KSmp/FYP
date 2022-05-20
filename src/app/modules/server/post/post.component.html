@@ -4,7 +4,7 @@
       <div
         mat-card-avatar
         class="avatar-image"
-        [style.background-image]="'url(' + (post.author?.avatar || environment.appURL + 'assets/user-avatar.webp') + ')'"
+        [style.background-image]="'url(' + (post.author?.img || environment.appURL + 'assets/user-avatar.webp') + ')'"
       ></div>
       <mat-card-title>{{ post.title }}</mat-card-title>
       <mat-card-subtitle>Posted by {{ post.author.name }}</mat-card-subtitle>
