@@ -71,6 +71,10 @@ const routes: Routes = [
             path: 'new-post',
             component: NewPostComponent,
           },
+          {
+            path: ':postid',
+            component: PostViewContainer,
+          }
         ]
       },
       {
@@ -84,6 +88,20 @@ const routes: Routes = [
           {
             path: ':id',
             component: ProfileContainer,
+            children: [
+              {
+                path: '',
+                component: ServerPostsContainer,
+              },
+              {
+                path: 'new-post',
+                component: NewPostComponent,
+              },
+              {
+                path: ':postid',
+                component: PostViewContainer,
+              }
+            ]
           },
         ]
       },

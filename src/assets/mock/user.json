@@ -1,6 +1,6 @@
 {
   "name": "Cabby",
-  "jpg": "http://localhost:4200/assets/mock/minecraft.jpg",
+  "img": "http://localhost:4200/assets/mock/minecraft.jpg",
   "groups": ["grupa","dupa"],
   "description": "Lubie placki",
   "posts": [{

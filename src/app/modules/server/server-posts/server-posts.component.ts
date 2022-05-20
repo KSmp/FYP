@@ -25,6 +25,4 @@ export class ServerPostsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {}
-  
-  tabChange() {}
 }
