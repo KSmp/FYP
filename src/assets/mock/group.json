@@ -4,7 +4,7 @@
   "img": "http://localhost:4200/assets/mock/minecraft.jpg",
   "usersCount": 69,
   "access": "2",
-  "games": ["Minecraft"],
+  "games": ["Minecraft", "Legaue of Legends"],
   "isInvited": true,
   "isOfficial": false,
   "isGame": true,

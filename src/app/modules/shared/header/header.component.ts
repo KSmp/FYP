@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Group } from 'src/app/interfaces/group.interface';
+import { User } from 'src/app/interfaces/user.interface';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -8,13 +9,12 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() element: Group
+  @Input() element: Group | User
 
   environment = environment
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

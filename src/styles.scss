@@ -1,6 +1,6 @@
 @use 'variables' as v;
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: #363636; color: white;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main-view-container {
@@ -11,6 +11,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: #363636 !important;
   color: white !important;
   border: none !important;
+
+  &.ck-button {
+    cursor:  pointer !important;
+  }
+}
+
+.upload-only {
+  .ck {
+    &.ck-editor {
+      max-width: 42px !important;
+    }
+
+    &.ck-editor__main {
+      display: none !important;
+    }
+  }
 }
 
 a {

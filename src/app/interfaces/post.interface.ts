@@ -1,4 +1,5 @@
 import { Comment } from './comments.interface'
+import { SimpleUser } from './simple-user.interface'
 
 export enum Voting {
   undefined = 0,
@@ -14,10 +15,7 @@ export interface Post {
   isPhoto: boolean,
   img?: string,
   hasVoted: Voting,
-  author: {
-    name: string,
-    avatar?: string,
-  },
+  author: SimpleUser,
   comments?: Comment[]
 }
 

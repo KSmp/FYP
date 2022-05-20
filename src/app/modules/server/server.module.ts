@@ -9,6 +9,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import { ServerPostsContainer } from './server-posts/server-posts.container';
 import { PostViewContainer } from './post-view/post-view.container';
+import { WidgetsComponent } from './widgets/widgets.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PostViewContainer } from './post-view/post-view.container';
     CommentsComponent,
     PostViewContainer,
     PostViewComponent,
+    WidgetsComponent,
   ],
   exports: [
     ServerComponent

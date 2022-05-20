@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="wrapper">
+    <div 
+      class="title-section"
+    >
+      <mat-icon class="logo">videogame_asset</mat-icon>
+      <span>{{ environment.title }}</span>
+    </div>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h2>Log in</h2>
+      <div class="fields">
+        <mat-form-field color="accent">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="login" required>
+        </mat-form-field>
+        
+        <mat-form-field color="accent">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" required>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button mat-stroked-button type="submit">Log in</button>
+        <a [routerLink]="['/register']">Create account</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-<div class="list">
+<div
+  *ngIf="items?.length"
+  class="list"
+>
   <div
     *ngFor="let item of items"
     class="group"
@@ -6,6 +9,20 @@
     routerLinkActive="is-active"
     [routerLink]="[item.id]"
     [matTooltip]="item.name"
-    [style.background-image]="'url(' + (item?.img || environment.appURL + 'assets/group.jpg') + ')'"
+    [style.background-image]="'url(' + (item?.img || environment.appURL + 'assets/user-avatar.webp') + ')'"
+  ></div>
+</div>
+
+<div
+  *ngIf="!items?.length"
+  class="list"
+>
+  <div
+    class="group"
+    matTooltipPosition="right"
+    routerLinkActive="is-active"
+    [routerLink]="['new']"
+    [matTooltip]="'Create new group'"
+    [style.background-image]="'url(' + environment.appURL + 'assets/plus.jpg' + ')'"
   ></div>
 </div>

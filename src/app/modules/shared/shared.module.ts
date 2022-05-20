@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { VotingComponent } from './voting/voting.component';
+import { CardComponent } from './card/card.component';
 
 const declarations = [
   SideListComponent,
@@ -20,6 +21,7 @@ const declarations = [
   HeaderComponent,
   TweetComponent,
   VotingComponent,
+  CardComponent,
 ]
 
 const imports = [

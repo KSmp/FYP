@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Group } from 'src/app/interfaces/group.interface';
-import { Post } from 'src/app/interfaces/post.interface';
-import { GroupsService } from 'src/app/services/groups/groups.service';
+import { ApiService } from 'src/app/services/api/api.service';
+import { MainService } from 'src/app/services/main/main.service';
 
 @Component({
   selector: 'app-group',
@@ -12,16 +12,16 @@ import { GroupsService } from 'src/app/services/groups/groups.service';
 })
 export class GroupComponent implements OnInit {
   group$: Observable<Group>
-  // posts$: Observable<Post[]>
 
   constructor(
     private router: Router,
-    private service: GroupsService
+    private api: ApiService,
+    private mainService: MainService,
   ) { }
 
   ngOnInit(): void {
     const id = this.router.url.split('/')[2]
-    this.group$ = this.service.getGroup(id)
-    // this.posts$ = this.service.getPosts(id)
+    this.group$ = this.api.getGroup(id)
+    this.mainService.saveElement('widgets', ["edit", "visibility", "userCount", "games"])
   }
 }

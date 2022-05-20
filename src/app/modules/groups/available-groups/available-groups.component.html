@@ -1,9 +1,9 @@
 <div class="container">
-  <app-group-card
-    [group]="newGroup"
-  ></app-group-card>
-  <app-group-card
+  <app-card
+    [element]="newGroup"
+  ></app-card>
+  <app-card
     *ngFor="let group of groups"
-    [group]="group"
-  ></app-group-card>
+    [element]="group"
+  ></app-card>
 </div>

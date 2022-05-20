@@ -8,6 +8,8 @@ import { MainModule } from './modules/main/main.module';
 import { GroupsModule } from './modules/groups/groups.module';
 import { ServerModule } from './modules/server/server.module';
 import { ProfileModule } from './modules/profile/profile.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { FriendsModule } from './modules/friends/friends.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +22,8 @@ import { ProfileModule } from './modules/profile/profile.module';
     GroupsModule,
     ServerModule,
     ProfileModule,
+    AuthModule,
+    FriendsModule,
   ],
   bootstrap: [AppComponent]
 })

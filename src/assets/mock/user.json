@@ -1,0 +1,31 @@
+{
+  "name": "Cabby",
+  "jpg": "http://localhost:4200/assets/mock/minecraft.jpg",
+  "groups": ["grupa","dupa"],
+  "description": "Lubie placki",
+  "posts": [{
+    "id": "e34j5535",
+    "title": "Title 1",
+    "content": "Culpa ea ex culpa quis ex est Lorem exercitation labore minim eiusmod qui incididunt enim. Duis do magna cillum excepteur ut sit. Qui dolor fugiat laboris aute dolore dolor culpa excepteur sit esse ullamco deserunt et. Cillum ea amet consectetur nulla quis quis anim culpa aliqua eiusmod laboris labore nisi exercitation. Pariatur sunt consequat dolore anim minim.",
+    "votingCount": 69,
+    "isPhoto": false,
+    "hasVoted": 1,
+    "author": {
+      "name": "Cabby",
+      "avatar": "http://localhost:4200/assets/mock/minecraft.jpg"
+    }
+  },{
+    "id": "e34j5535",
+    "title": "Title 1",
+    "content": "Culpa ea ex culpa quis ex est Lorem exercitation labore minim eiusmod qui incididunt enim. Duis do magna cillum excepteur ut sit. Qui dolor fugiat laboris aute dolore dolor culpa excepteur sit esse ullamco deserunt et. Cillum ea amet consectetur nulla quis quis anim culpa aliqua eiusmod laboris labore nisi exercitation. Pariatur sunt consequat dolore anim minim.",
+    "votingCount": 69,
+    "isPhoto": false,
+    "hasVoted": 1,
+    "author": {
+      "name": "Cabby",
+      "avatar": "http://localhost:4200/assets/mock/minecraft.jpg"
+    }
+  }],
+  "friends": ["user123, Domino12"],
+  "games": ["Minecraft", "League of Legens", "The Witcher 3: Dziki Gon"]
+}

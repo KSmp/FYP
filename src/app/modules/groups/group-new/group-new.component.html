@@ -1,1 +1,41 @@
-<p>group-new works!</p>
+<div class="container">
+  <div class="wrapper">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h2>Create new group</h2>
+      <div class="fields">
+        <mat-form-field color="accent">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field color="accent">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <div class="uploads">
+          <div class="image-upload">
+            <span>Avatar</span>
+            <ckeditor
+              class="upload-only"
+              [config]="editorConfig"
+              [editor]="img"
+            ></ckeditor>
+          </div>
+          <div class="image-upload">
+            <span>Background</span>
+            <ckeditor
+              class="upload-only"
+              [config]="editorConfig"
+              [editor]="background"
+            ></ckeditor>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button mat-stroked-button type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

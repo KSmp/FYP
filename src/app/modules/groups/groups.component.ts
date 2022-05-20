@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GroupsService } from '../../services/groups/groups.service';
 import { Group } from '../../interfaces/group.interface';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-groups',
@@ -12,10 +12,10 @@ export class GroupsComponent implements OnInit {
   userGroups$: Observable<Group[]>
 
   constructor(
-    private service: GroupsService
+    private api: ApiService
   ) { }
 
   ngOnInit(): void {
-    this.userGroups$ = this.service.getUserGroups()
+    this.userGroups$ = this.api.getUserGroups()
   }
 }

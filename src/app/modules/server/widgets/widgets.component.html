@@ -1,0 +1,79 @@
+<div class="container">
+  <mat-card *ngFor="let widget of widgets">
+    <section
+      *ngIf="widget === 'edit'"
+      [class]="widget"
+      (click)="1"
+    >
+      <span>Edit</span>
+      <button mat-icon-button>
+        <mat-icon>edit</mat-icon>
+      </button>
+    </section>
+    <section
+      *ngIf="widget === 'groups'"
+      [class]="widget"
+    >
+      <span>Groups</span>
+      <span>{{ asUser(element).groups?.length || 0 }}</span>
+    </section>
+    <section
+      *ngIf="widget === 'online'"
+      [class]="widget"
+    >
+      <div
+        *ngIf="asUser(element)?.online === Online.offline || !asUser(element)?.online"
+        class="off"
+      >
+        <span>Offline</span>
+        <span class="dot"></span>
+      </div>
+      <div
+        *ngIf="asUser(element)?.online === Online.online"
+        class="off"
+      >
+        <span>Online</span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <section
+      *ngIf="widget === 'userCount'"
+      [class]="widget"
+    >
+      <span>Users</span>
+      <span>{{ asGroup(element).usersCount }}</span>
+    </section>
+    <section
+      *ngIf="widget === 'friends'"
+      [class]="widget"
+    >
+      <span>Friends</span>
+      <span>{{ asUser(element).friends?.length || 0 }}</span>
+    </section>
+    <section
+      *ngIf="widget === 'games'"
+      [class]="widget"
+    >
+      <div class="top">
+        <span>Games</span>
+        <span>{{ element?.games.length || 0 }}</span>
+      </div>
+      <div class="list">
+        <span *ngFor="let game of element?.games">{{ game }}</span>
+      </div>
+    </section>
+    <section
+      *ngIf="widget === 'visibility'"
+      [class]="widget"
+    >
+      <span *ngIf="asGroup(element)?.access == AccessLevel.public"><mat-icon>public</mat-icon> Public</span>
+      <span *ngIf="asGroup(element)?.access == AccessLevel.private"><mat-icon>lock</mat-icon> Private</span>
+    </section>
+    <section
+      *ngIf="widget === 'links'"
+      [class]="widget"
+    >
+      <span>{{ asUser(element)?.links | json }}</span>
+    </section>
+  </mat-card>
+</div>

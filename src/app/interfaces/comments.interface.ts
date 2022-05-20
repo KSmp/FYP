@@ -1,16 +1,14 @@
 import { Voting } from "./post.interface";
+import { SimpleUser } from "./simple-user.interface";
 
 
 export interface Comment {
-  author: {
-    name: string,
-    avatar?: string,
-  },
+  author: SimpleUser,
   date: number,
   content: string,
   votingCount: number,
   hasVoted: Voting,
   replies: Comment[],
-  showForm?: boolean // panel property
+  showForm?: boolean, // panel property
 }
 

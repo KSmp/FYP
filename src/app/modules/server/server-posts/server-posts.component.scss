@@ -1,13 +1,14 @@
 @use '../../../../variables' as v;
 
-.mat-tab-group {
-  margin: 25px 50px;
+.wall {
+  display: flex;
 }
 
-.create-post-container {
+.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  max-width: 80%;
 
   .create-post {
     display: flex;

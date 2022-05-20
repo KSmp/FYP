@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="wrapper">
+    <div 
+      class="title-section"
+    >
+      <mat-icon class="logo">videogame_asset</mat-icon>
+      <span>{{ environment.title }}</span>
+    </div>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h2>Create account</h2>
+      <div class="fields">
+        <mat-form-field color="accent">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="login" required>
+          <mat-hint>Min. 3 characters, letters and numbers only</mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field color="accent">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" required>
+          <mat-hint>Min. 8 characters, at least 1 uppercase, 1 lowercase, 1 number and 1 special</mat-hint>
+        </mat-form-field>
+
+        <!-- <mat-form-field color="accent">
+          <mat-label>Repeat password</mat-label>
+          <input type="password" matInput formControlName="passwordRepeat" required>
+        </mat-form-field> -->
+      </div>
+      <div class="actions">
+        <button mat-stroked-button type="submit">Sign in</button>
+        <a [routerLink]="['/login']">Already have an account?</a>
+      </div>
+    </form>
+  </div>
+</div>

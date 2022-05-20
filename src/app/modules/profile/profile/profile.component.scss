@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgb(66, 66, 66);
+  color: white;
+
+  .wrapper {
+    width: 90%;
+  }
+}

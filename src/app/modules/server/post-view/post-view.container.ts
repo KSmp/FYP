@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Post } from 'src/app/interfaces/post.interface';
-import { GroupsService } from 'src/app/services/groups/groups.service';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   template: `
@@ -16,11 +16,11 @@ export class PostViewContainer implements OnInit {
 
   constructor(
     private router: Router,
-    private service: GroupsService,
+    private api: ApiService,
   ) { }
 
   ngOnInit(): void {
     const id = this.router.url.split('/')[3]
-    this.post$ = this.service.getPostById(id)
+    this.post$ = this.api.getPostById(id)
   }
 }

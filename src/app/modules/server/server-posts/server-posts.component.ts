@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.interface';
+import { SimpleUser } from 'src/app/interfaces/simple-user.interface';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,11 +16,11 @@ export class ServerPostsComponent implements OnInit {
     this.isLoadingPosts = false
   }
 
+  @Input() profile: SimpleUser
+
   serverPosts: Post[]
   isLoadingPosts = true
   readonly environment = environment 
-
-  avatar: string = undefined
 
   constructor() { }
 
